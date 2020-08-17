@@ -52,7 +52,6 @@ texture = ExtResource( 7 )
 position = Vector2( 16, 280 )
 frames = SubResource( 1 )
 animation = "1"
-frame = 1
 playing = true
 
 [node name="Ruby\'s" type="Node" parent="."]
@@ -157,4 +156,4 @@ position = Vector2( 1496, 128 )
 position = Vector2( 1512, 128 )
 
 [node name="Ruby34" parent="Ruby\'s" instance=ExtResource( 3 )]
-position = Vector2( 1552, 128 )
+position = Vector2( 1560, 128 )

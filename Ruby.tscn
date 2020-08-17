@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.0
-height = 0.0
+height = 8.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -27,6 +27,6 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Static"
-frame = 1
+frame = 2
 playing = true
 [connection signal="body_entered" from="." to="." method="_on_Ruby_body_entered"]

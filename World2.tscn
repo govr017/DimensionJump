@@ -34,8 +34,8 @@ position = Vector2( 256, 336 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 176, 96 )
-scale = Vector2( 2.75, 1.5 )
+position = Vector2( 176, 108.5 )
+scale = Vector2( 2.75, 1.69531 )
 texture = ExtResource( 4 )
 
 [node name="Lost" type="AnimatedSprite" parent="."]
