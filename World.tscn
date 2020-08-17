@@ -1,27 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GreenGrassTileset01.tres" type="TileSet" id=3]
 [ext_resource path="res://DecorationGrassTileset01.tres" type="TileSet" id=4]
-[ext_resource path="res://Sprites/Particle01.png" type="Texture" id=5]
 [ext_resource path="res://DeathZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/background01.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/run1(ch).png" type="Texture" id=8]
 [ext_resource path="res://Sprites/run2(ch).png" type="Texture" id=9]
 
-[sub_resource type="ParticlesMaterial" id=1]
-flag_disable_z = true
-spread = 180.0
-flatness = 0.74
-gravity = Vector3( 0, -100, 0 )
-orbit_velocity = -0.01
-orbit_velocity_random = 0.28
-linear_accel = 100.0
-angle = -347.6
-angle_random = 1.0
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -52,11 +40,6 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 589854, 1, 0, 589855, 2, 0, 589856, 3, 0, 589857, 4, 0, 720921, 0, 0, 786452, 4, 0, 851978, 2, 0, 851979, 0, 0, 851980, 3, 0, 851981, 1, 0, 851982, 0, 0, 851983, 0, 0, 851984, 4, 0 )
 
-[node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 519, 135 )
-process_material = SubResource( 1 )
-texture = ExtResource( 5 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground"]
@@ -66,6 +49,7 @@ texture = ExtResource( 7 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 16, 280 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "1"
+frame = 1
 playing = true

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Dimension Jump 0.2c"
+config/name="Dimension Jump 0.3"
 run/main_scene="res://StartMENU.tscn"
 config/icon="res://icon.png"
 

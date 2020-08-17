@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/background02.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/run1(ch).png" type="Texture" id=5]
 [ext_resource path="res://Sprites/run2(ch).png" type="Texture" id=6]
-[ext_resource path="res://Sprites/WIP.png" type="Texture" id=7]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -44,6 +44,6 @@ animation = "1"
 frame = 1
 playing = true
 
-[node name="WIP-Sign" type="Sprite" parent="."]
-position = Vector2( 1200, 168 )
-texture = ExtResource( 7 )
+[node name="Portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1200, 160 )
+world_scene = "res://World 3.tscn"
