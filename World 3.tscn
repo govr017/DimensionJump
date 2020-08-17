@@ -6,7 +6,7 @@
 [ext_resource path="res://DeathZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Spike(NEW).tscn" type="PackedScene" id=5]
 [ext_resource path="res://Moving_Block.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/WIP.png" type="Texture" id=7]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=7]
 
 [node name="Node" type="Node"]
 
@@ -140,6 +140,6 @@ position = Vector2( 1112, -120 )
 [node name="Moving_Block2" parent="Moving_Blocks" instance=ExtResource( 6 )]
 position = Vector2( 1456, -136 )
 
-[node name="WIP" type="Sprite" parent="."]
-position = Vector2( 1888, -136 )
-texture = ExtResource( 7 )
+[node name="Portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1888, -144 )
+world_scene = "res://World4.tscn"

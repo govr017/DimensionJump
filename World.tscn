@@ -25,7 +25,7 @@ position = Vector2( 176, 216 )
 [node name="DeathZone" parent="." instance=ExtResource( 6 )]
 
 [node name="Portal" parent="." instance=ExtResource( 1 )]
-position = Vector2( 513, 153 )
+position = Vector2( 513, 145 )
 world_scene = "res://World2.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -51,5 +51,4 @@ texture = ExtResource( 7 )
 position = Vector2( 16, 280 )
 frames = SubResource( 1 )
 animation = "1"
-frame = 1
 playing = true
