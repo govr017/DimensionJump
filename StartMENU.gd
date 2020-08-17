@@ -6,7 +6,7 @@ func _on_Start_pressed() -> void:
 	
 	
 	
-	get_tree().change_scene("res://World.tscn")
+	get_tree().change_scene("res://World1.tscn")
 	
 
 func _on_Quit_pressed() -> void:

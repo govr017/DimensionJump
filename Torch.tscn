@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/Torch1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/FireParticle.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Sphere(LIGHT).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Torch2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "TorchFire",
+"speed": 3.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 1
+emission_sphere_radius = 11.3
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.0
+scale_random = 1.0
+hue_variation = 0.04
+hue_variation_random = 1.0
+
+[node name="Torch" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+color = Color( 0.941176, 0.494118, 0.2, 1 )
+energy = 1.5
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "TorchFire"
+playing = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+process_material = SubResource( 2 )
+texture = ExtResource( 2 )

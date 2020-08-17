@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SandTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/run1(ch).png" type="Texture" id=5]
 [ext_resource path="res://Sprites/run2(ch).png" type="Texture" id=6]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Ruby.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,9 +42,61 @@ texture = ExtResource( 4 )
 position = Vector2( 64, 200 )
 frames = SubResource( 1 )
 animation = "1"
-frame = 1
 playing = true
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1200, 160 )
-world_scene = "res://World 3.tscn"
+world_scene = "res://World3.tscn"
+
+[node name="Ruby\'s" type="Node" parent="."]
+
+[node name="Ruby" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 136, 48 )
+
+[node name="Ruby2" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 200, 32 )
+
+[node name="Ruby3" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 232, 56 )
+
+[node name="Ruby4" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 256, 40 )
+
+[node name="Ruby5" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 280, 56 )
+
+[node name="Ruby6" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 376, 56 )
+
+[node name="Ruby7" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 448, 40 )
+
+[node name="Ruby8" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 648, 64 )
+
+[node name="Ruby9" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 584, 64 )
+
+[node name="Ruby10" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 768, 80 )
+
+[node name="Ruby11" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 792, 96 )
+
+[node name="Ruby12" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 816, 80 )
+
+[node name="Ruby13" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 1048, 192 )
+
+[node name="Ruby14" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 1080, 192 )
+
+[node name="Ruby15" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 1112, 192 )
+
+[node name="Ruby16" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 1176, 160 )
+
+[node name="Ruby17" parent="Ruby\'s" instance=ExtResource( 8 )]
+position = Vector2( 1224, 160 )
