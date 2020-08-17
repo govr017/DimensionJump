@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://SandTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DeathZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/background02.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/run1(ch).png" type="Texture" id=5]
+[ext_resource path="res://Sprites/run2(ch).png" type="Texture" id=6]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+} ]
+
+[node name="World2" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 131110, 1, 0, 196609, 0, 0, 196610, 1, 0, 196611, 2, 0, 196620, 1, 0, 262145, 7, 0, 262146, 8, 0, 262147, 3, 0, 262152, 1, 0, 262174, 1, 0, 327681, 6, 0, 327682, 5, 0, 327683, 4, 0, 327694, 0, 0, 327695, 1, 0, 327696, 1, 0, 327697, 2, 0, 327702, 0, 0, 327703, 1, 0, 327704, 2, 0, 327706, 1, 0, 393230, 7, 0, 393231, 8, 0, 393232, 8, 0, 393233, 3, 0, 393238, 6, 0, 393239, 5, 0, 393240, 4, 0, 393251, 1, 0, 393253, 1, 0, 393256, 1, 0, 393271, 1, 0, 393272, 1, 0, 458766, 6, 0, 458767, 5, 0, 458768, 5, 0, 458769, 4, 0, 458799, 0, 0, 458800, 1, 0, 458801, 1, 0, 458802, 1, 0, 458803, 2, 0, 524332, 1, 0, 524335, 7, 0, 524336, 8, 0, 524337, 8, 0, 524338, 8, 0, 524339, 3, 0, 589871, 6, 0, 589872, 5, 0, 589873, 5, 0, 589874, 5, 0, 589875, 4, 0, 655417, 1, 0, 655425, 1, 0, 655427, 1, 0, 655429, 1, 0, 720969, 0, 0, 720970, 1, 0, 720971, 1, 0, 720972, 2, 0, 786505, 6, 0, 786506, 5, 0, 786507, 5, 0, 786508, 4, 0, 851971, 0, 0, 851972, 2, 0, 852032, 1, 0, 852034, 1, 0, 852036, 1, 0, 852038, 1, 0, 917507, 6, 0, 917508, 4, 0, 983099, 1, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 32 )
+
+[node name="DeathZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, 336 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 176, 96 )
+scale = Vector2( 2.75, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="Lost" type="AnimatedSprite" parent="."]
+position = Vector2( 64, 200 )
+frames = SubResource( 1 )
+animation = "1"
+frame = 1
+playing = true
+
+[node name="Portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1200, 160 )
+world_scene = "res://World 3.tscn"
