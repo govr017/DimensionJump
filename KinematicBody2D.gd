@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const TYPE = "Player"
+
 
 var aud_player = AudioStreamPlayer2D.new()
 var motion = Vector2()
@@ -36,11 +36,9 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		$Sprite.play("idle")
-		$AnimationPlayer.play("Idle")
 	
 	if is_on_floor():
 		if Input. is_action_pressed("ui_up"):
-			$AnimationPlayer.play("Jump")
 			motion.y = JUMP_HEIGHT
 			self.add_child(aud_player)
 			aud_player.stream = load("res://sfx/Jump.wav")
@@ -49,7 +47,6 @@ func _physics_process(delta):
 			
 			
 	else:
-		$AnimationPlayer.play("Jump")
 		$Sprite.play("Jump")
 	
 	
