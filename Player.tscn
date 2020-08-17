@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sprites/walk2(ch).png" type="Texture" id=1]
 [ext_resource path="res://Sprites/idle(ch).png" type="Texture" id=2]
@@ -16,14 +16,14 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
@@ -67,6 +67,21 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1.5 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "SpinTest"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 2 ), Vector2( 1, 1 ) ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 7 )
 __meta__ = {
@@ -74,6 +89,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1, 1.15528 )
 frames = SubResource( 1 )
 animation = "idle"
 
@@ -91,3 +107,4 @@ smoothing_enabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 3 )
 anims/Jump = SubResource( 4 )
+anims/SpinTest = SubResource( 5 )

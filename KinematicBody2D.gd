@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const TYPE = "Player"
 
 var aud_player = AudioStreamPlayer2D.new()
 var motion = Vector2()
@@ -9,8 +10,17 @@ const UP = Vector2(0, -1 )
 const JUMP_HEIGHT = -150
 
 
+
+
+
+
+
+
 func _physics_process(delta):
 	motion.y += GRAVITY
+	
+	
+	
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
@@ -43,6 +53,18 @@ func _physics_process(delta):
 		$Sprite.play("Jump")
 	
 	
+		
+	
+	
+	
+		
+		
+		
+		
+	
 	
 	motion = move_and_slide(motion, UP)
 	pass
+
+
+
