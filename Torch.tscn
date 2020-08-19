@@ -41,6 +41,7 @@ energy = 1.5
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "TorchFire"
+frame = 1
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]

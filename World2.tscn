@@ -42,6 +42,7 @@ texture = ExtResource( 4 )
 position = Vector2( 64, 200 )
 frames = SubResource( 1 )
 animation = "1"
+frame = 1
 playing = true
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
