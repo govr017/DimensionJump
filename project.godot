@@ -19,6 +19,10 @@ config/name="Dimension Jump 0.4"
 run/main_scene="res://StartMENU.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+_G="*res://autoload_g.gd"
+
 [display]
 
 window/size/width=340

@@ -5,4 +5,4 @@ func _physics_process(delta: float) -> void:
 	for body in bodies:
 		if body.name == "Player":
 			print("Player touched DeathZone")
-			get_tree().reload_current_scene()
+			_G.Restart_Level()
