@@ -9,3 +9,12 @@ lib/
 # godot-git-plugin-v1.2
 git_api.gdnlib
 git_api.gdns
+
+## IDE
+.vscode
+.idea
+*sublime*
+
+## Backup- and local- version
+*.bak
+*.local
