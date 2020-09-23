@@ -18,14 +18,14 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "Walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ) ],
@@ -33,10 +33,10 @@ animations = [ {
 "name": "Spin",
 "speed": 70.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "Run",
-"speed": 10.0
+"name": "Walk",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -51,7 +51,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 6
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
