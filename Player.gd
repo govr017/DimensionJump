@@ -38,6 +38,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("dj_x"):
 		SPEED = 50
 		GRAVITY = 2
+		$Sprite.play("Spin")
+	elif Input.is_action_just_released("dj_x"):
+		SPEED = 100
+		GRAVITY = 5
+	
 	else:
 		if is_on_floor():
 			SPEED = 100
