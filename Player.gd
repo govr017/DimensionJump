@@ -3,7 +3,7 @@ extends KinematicBody2D
 var aud_player = AudioStreamPlayer2D.new()
 var motion = Vector2()
 var GRAVITY = 5
-var SPEED = 100
+var SPEED = 90
 const UP = Vector2(0, -1 )
 const JUMP_HEIGHT = -150
 const SPIN_JUMP_HEIGHT = -200
@@ -29,7 +29,17 @@ func _physics_process(delta):
 			self.add_child(aud_player)
 			aud_player.stream = load("res://sfx/Jump.wav")
 			aud_player.play()
-	
+		if Input. is_action_pressed("ui_up"):
+			motion.y = JUMP_HEIGHT
+			self.add_child(aud_player)
+			aud_player.stream = load("res://sfx/Jump.wav")
+			aud_player.play()
+		if Input. is_action_pressed("spacebar"):
+			motion.y = JUMP_HEIGHT
+			self.add_child(aud_player)
+			aud_player.stream = load("res://sfx/Jump.wav")
+			aud_player.play()
+		
 	
 	else:
 		$Sprite.play("Jump")
