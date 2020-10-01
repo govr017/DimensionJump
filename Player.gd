@@ -8,6 +8,10 @@ const UP = Vector2(0, -1 )
 const JUMP_HEIGHT = -150
 const SPIN_JUMP_HEIGHT = -200
 
+func _ready():
+	$Particles2D.hide()
+
+
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
@@ -45,14 +49,20 @@ func _physics_process(delta):
 		$Sprite.play("Jump")
 	
 	
+	if Input.is_action_just_pressed("dj_x"):
+		aud_player.stream = load("res://sfx/Spin1.wav")
+		aud_player.play()
+		
 	if Input.is_action_pressed("dj_x"):
 		SPEED = 50
 		GRAVITY = 2
 		$Sprite.play("Spin")
+		$Particles2D.show()
 	elif Input.is_action_just_released("dj_x"):
 		SPEED = 100
 		GRAVITY = 5
-	
+		aud_player.stop()
+		$Particles2D.hide()
 	else:
 		if is_on_floor():
 			SPEED = 100
