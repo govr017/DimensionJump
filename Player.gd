@@ -49,20 +49,22 @@ func _physics_process(delta):
 		$Sprite.play("Jump")
 	
 	
+	
 	if Input.is_action_just_pressed("dj_x"):
 		aud_player.stream = load("res://sfx/Spin1.wav")
 		aud_player.play()
-		
+		$Sprite.play("Spin")
 	if Input.is_action_pressed("dj_x"):
 		SPEED = 50
 		GRAVITY = 2
-		$Sprite.play("Spin")
 		$Particles2D.show()
+		$Sprite.play("Spin")
 	elif Input.is_action_just_released("dj_x"):
 		SPEED = 100
 		GRAVITY = 5
 		aud_player.stop()
 		$Particles2D.hide()
+		$Sprite.play("Spin")
 	else:
 		if is_on_floor():
 			SPEED = 100

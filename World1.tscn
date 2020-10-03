@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://DecorationGrassTileset01.tres" type="TileSet" id=1]
 [ext_resource path="res://GreenGrassTileset01.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sprites/background01.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/run1(ch).png" type="Texture" id=8]
 [ext_resource path="res://Sprites/run2(ch).png" type="Texture" id=9]
+[ext_resource path="res://Time Juice.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -157,3 +158,7 @@ position = Vector2( 1512, 128 )
 
 [node name="Ruby34" parent="Ruby\'s" instance=ExtResource( 3 )]
 position = Vector2( 1560, 128 )
+
+[node name="Time Juice" parent="." instance=ExtResource( 10 )]
+position = Vector2( 16, 264 )
+world_scene = "res://BonusLevel1.tscn"

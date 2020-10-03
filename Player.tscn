@@ -19,11 +19,6 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Spin",
-"speed": 70.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
@@ -33,6 +28,11 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Spin",
+"speed": 70.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ) ],
 "loop": true,
@@ -65,7 +65,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
