@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Time Juice.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Time_Juice4.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Time_Juice6.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Time_Juice3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Time_Juice5.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Time_Juice_Particle.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Time_Juice2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Time_Juice1.png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Spill",
+"speed": 10.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 17.18
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 1.0
+angle = 115.9
+angle_random = 1.0
+
+[node name="Time Juice" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Spill"
+frame = 4
+playing = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+process_material = SubResource( 3 )
+texture = ExtResource( 6 )

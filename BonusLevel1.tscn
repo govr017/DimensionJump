@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DeathZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://StarBackground.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BonusTileset.tres" type="TileSet" id=4]
+[ext_resource path="res://Ruby.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Time Juice.tscn" type="PackedScene" id=6]
+
+[node name="BonusLevel1" type="Node"]
+
+[node name="DeathZone" parent="." instance=ExtResource( 2 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 48 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 24, 28, 0, 31, 28, 0, 32, 28, 0, 33, 28, 0, 34, 28, 0, 65560, 35, 0, 65567, 35, 0, 65572, 28, 0, 65576, 28, 0, 65579, 27, 0, 65580, 29, 0, 131091, 28, 0, 131092, 28, 0, 131093, 28, 0, 131096, 35, 0, 131103, 35, 0, 131110, 28, 0, 131115, 33, 0, 131116, 31, 0, 196616, 28, 0, 196627, 35, 0, 196628, 35, 0, 196629, 35, 0, 196654, 28, 0, 196655, 28, 0, 262145, 0, 0, 262146, 28, 0, 262147, 29, 0, 262150, 28, 0, 262154, 28, 0, 262156, 28, 0, 262157, 28, 0, 262161, 28, 0, 262163, 35, 0, 262164, 35, 0, 262165, 35, 0, 262170, 28, 0, 262171, 28, 0, 262172, 28, 0, 262173, 28, 0, 262193, 28, 0, 262196, 28, 0, 262197, 28, 0, 327681, 34, 0, 327682, 35, 0, 327683, 30, 0, 393217, 33, 0, 393218, 32, 0, 393219, 31, 0 )
+
+[node name="Rubys" type="Node" parent="."]
+
+[node name="Ruby" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 56, 40 )
+
+[node name="Ruby2" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 104, 40 )
+
+[node name="Ruby3" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 136, 24 )
+
+[node name="Ruby4" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 168, 48 )
+
+[node name="Ruby5" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 208, 40 )
+
+[node name="Ruby6" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 280, 32 )
+
+[node name="Ruby7" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 328, 8 )
+
+[node name="Ruby8" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 312, 8 )
+
+[node name="Ruby9" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 344, 8 )
+
+[node name="Ruby10" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 448, 40 )
+
+[node name="Ruby11" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 416, 24 )
+
+[node name="Ruby12" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 480, 24 )
+
+[node name="Ruby13" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 424, 48 )
+
+[node name="Ruby14" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 472, 48 )
+
+[node name="Ruby15" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 504, -16 )
+
+[node name="Ruby16" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 528, -16 )
+
+[node name="Ruby17" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 552, -16 )
+
+[node name="Ruby18" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 616, 8 )
+
+[node name="Ruby19" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 704, 0 )
+
+[node name="Ruby20" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 752, 32 )
+
+[node name="Ruby21" parent="Rubys" instance=ExtResource( 5 )]
+position = Vector2( 792, 40 )
+
+[node name="Time Juice" parent="." instance=ExtResource( 6 )]
+position = Vector2( 848, 48 )
+world_scene = "res://World1.tscn"
