@@ -65,7 +65,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,3 +87,6 @@ lifetime = 0.4
 fract_delta = false
 process_material = SubResource( 3 )
 texture = ExtResource( 11 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 0, -10 )

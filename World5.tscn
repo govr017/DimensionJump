@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://JungleGrassTileset01.tres" type="TileSet" id=1]
 [ext_resource path="res://StoneAndOreTileset01.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CaveCrystalTileset01.tres" type="TileSet" id=4]
 [ext_resource path="res://StationsTileset01.tres" type="TileSet" id=5]
+[ext_resource path="res://Sprites/Rocky.png" type="Texture" id=6]
+[ext_resource path="res://Rock.gd" type="Script" id=7]
+
+[sub_resource type="PhysicsMaterial" id=3]
+bounce = 0.2
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
 
 [node name="World5" type="Node"]
 
@@ -12,13 +23,13 @@
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 2, 0, 262152, 1, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 7, 0, 327684, 3, 0, 327688, 7, 0, 393216, 3, 0, 393217, 3, 0, 393218, 6, 0, 393219, 3, 0, 393220, 3, 0, 393224, 7, 0, 458752, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 8, 0, 458756, 3, 0, 458760, 7, 0 )
+tile_data = PoolIntArray( 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 2, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 7, 0, 327684, 3, 0, 327688, 7, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 393216, 3, 0, 393217, 3, 0, 393218, 6, 0, 393219, 3, 0, 393220, 3, 0, 393224, 7, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 458752, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 8, 0, 458756, 3, 0, 458760, 7, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0 )
 
 [node name="Stone" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 3, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 3, 0, 524304, 3, 0, 589828, 3, 0, 589839, 4, 0, 589840, 3, 0, 655364, 2, 0, 655376, 3, 0, 720900, 3, 0, 720912, 0, 0, 786436, 3, 0, 786441, 0, 0, 786444, 2, 0, 786446, 1, 0, 786448, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 1, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 0, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0 )
+tile_data = PoolIntArray( 15, 3, 0, 65551, 3, 0, 131087, 3, 0, 196623, 3, 0, 262159, 3, 0, 327695, 3, 0, 393231, 3, 0, 458767, 3, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 3, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 3, 0, 524304, 3, 0, 589828, 3, 0, 589839, 4, 0, 589840, 3, 0, 655364, 2, 0, 655376, 3, 0, 720900, 3, 0, 720912, 0, 0, 786436, 3, 0, 786441, 0, 0, 786444, 2, 0, 786446, 1, 0, 786448, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 1, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 0, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0 )
 
 [node name="Stations" type="TileMap" parent="."]
 tile_set = ExtResource( 5 )
@@ -34,3 +45,25 @@ tile_data = PoolIntArray( 983045, 0, 0, 983047, 3, 0, 983051, 4, 0, 983053, 1, 0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 48 )
+
+[node name="Rock" type="RigidBody2D" parent="."]
+position = Vector2( 152, 32 )
+collision_mask = 2147483649
+physics_material_override = SubResource( 3 )
+gravity_scale = 2.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Rock"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
+scale = Vector2( 0.41, 0.57 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Rock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/Area2D"]
+shape = SubResource( 2 )

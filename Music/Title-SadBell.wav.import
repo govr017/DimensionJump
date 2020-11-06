@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Title-SadBell.wav-7d53846ce2b6d6c3efdfbae5bf93e99d.sample"
+
+[deps]
+
+source_file="res://Music/Title-SadBell.wav"
+dest_files=[ "res://.import/Title-SadBell.wav-7d53846ce2b6d6c3efdfbae5bf93e99d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
