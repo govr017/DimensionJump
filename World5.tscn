@@ -1,21 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://JungleGrassTileset01.tres" type="TileSet" id=1]
 [ext_resource path="res://StoneAndOreTileset01.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://CaveCrystalTileset01.tres" type="TileSet" id=4]
 [ext_resource path="res://StationsTileset01.tres" type="TileSet" id=5]
-[ext_resource path="res://Sprites/Rocky.png" type="Texture" id=6]
-[ext_resource path="res://Rock.gd" type="Script" id=7]
-
-[sub_resource type="PhysicsMaterial" id=3]
-bounce = 0.2
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
+[ext_resource path="res://Rock.tscn" type="PackedScene" id=6]
 
 [node name="World5" type="Node"]
 
@@ -46,24 +36,4 @@ tile_data = PoolIntArray( 983045, 0, 0, 983047, 3, 0, 983051, 4, 0, 983053, 1, 0
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 32, 48 )
 
-[node name="Rock" type="RigidBody2D" parent="."]
-position = Vector2( 152, 32 )
-collision_mask = 2147483649
-physics_material_override = SubResource( 3 )
-gravity_scale = 2.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Rock"]
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
-scale = Vector2( 0.41, 0.57 )
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="Rock"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/Area2D"]
-shape = SubResource( 2 )
+[node name="Rock" parent="." instance=ExtResource( 6 )]
