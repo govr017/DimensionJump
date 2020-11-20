@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://JungleGrassTileset01.tres" type="TileSet" id=1]
 [ext_resource path="res://StoneAndOreTileset01.tres" type="TileSet" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://CaveCrystalTileset01.tres" type="TileSet" id=4]
 [ext_resource path="res://StationsTileset01.tres" type="TileSet" id=5]
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Jungle Background2.png" type="Texture" id=7]
+[ext_resource path="res://Water.tres" type="TileSet" id=8]
 
 [node name="World5" type="Node"]
 
@@ -33,7 +35,21 @@ cell_size = Vector2( 16, 13 )
 format = 1
 tile_data = PoolIntArray( 983045, 0, 0, 983047, 3, 0, 983051, 4, 0, 983053, 1, 0, 983055, 2, 0 )
 
+[node name="Water" type="TileMap" parent="."]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786442, 0, 0, 786443, 0, 0, 786445, 0, 0, 786447, 0, 0 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
+light_mask = 1025
 position = Vector2( 32, 48 )
 
 [node name="Rock" parent="." instance=ExtResource( 6 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 168, 92 )
+scale = Vector2( 1, 1.15 )
+texture = ExtResource( 7 )
